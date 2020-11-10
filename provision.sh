@@ -19,7 +19,7 @@ install_terraform() {
     sudo apt install unzip
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip 
     chmod +x terraform
-    mv terraform /usr/local/bin 
+    sudo mv terraform /usr/local/bin 
 }
 
 check_installation() {
