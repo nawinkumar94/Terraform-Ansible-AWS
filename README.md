@@ -93,7 +93,7 @@ Configuration Management Using Ansible
 4.Ansible will fetch all the servers created by Terraform using dynamic inventory plugin and execute all the modules in the servers.
 
 About Chef Inspec
-InSpec 2 introduces the ability to test cloud resources for compliance in addition to the system and application-level resources
+InSpec introduces the ability to test cloud resources for compliance in addition to the system and application-level resources
 
 Automated Testing Using Inspec
 1.Automated Testing can be done using Inspec
