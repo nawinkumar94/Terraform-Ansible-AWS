@@ -4,7 +4,7 @@
 # Also Check and Confirms the success of Installation
 # To Run => sudo ./provision.sh
 
-TERRAFORM_VERSION="0.12.26"
+TERRAFORM_VERSION="0.13.5"
 
 install_ansible() {
     echo "Installing Ansible..."
