@@ -6,6 +6,7 @@
 *.tfstate.*
 *.terraform
 .vagrant
+.output.terrform
 
 # Crash log files
 crash.log
