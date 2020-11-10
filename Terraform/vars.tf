@@ -11,7 +11,7 @@ variable "PATH_TO_PUBLICKEY"{
 }
 
 variable PATH_TO_PRIVATE_KEY{
-  default = "mykey"
+  default = "mykeypair"
 }
 
 variable AMIS {

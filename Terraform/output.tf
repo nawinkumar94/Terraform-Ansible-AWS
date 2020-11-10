@@ -5,30 +5,29 @@
 
 # Load Balancer DNS Output
 output "loadbalancer_dns" {
-  value       = aws_lb.webserver_lb.dns_name
+  value       = module.application.loadbalancer_dns
   description = "Load Balancer DNS"
 }
 
 # Load Balancer ARN Output
 output "loadbalancer_arn" {
-  value       = aws_lb.webserver_lb.arn
+  value       = module.application.loadbalancer_arn
   description = "Load Balancer ARN"
 }
 
 # Webserver1 Instance
 output "Web_Server1" {
-  value       = aws_instance.webserver1.public_ip
+  value       = module.application.Web_Server1
   description = "Web_Server1 IP"
 }
 
 # Webserver2 Instance
 output "Web_Server2" {
-  value       = aws_instance.webserver2.public_ip
+  value       = module.application.Web_Server2
   description = "Web_Server2 IP"
 }
 
-#VPC
 output "VPC" {
-  value       = aws_security_group.allow_access.vpc_id
+  value       = module.application.VPC
   description = "VPC Id"
 }
