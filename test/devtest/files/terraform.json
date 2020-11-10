@@ -1,1 +1,27 @@
-{}
+{
+  "VPC": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-07d9ea7b17e711ac3"
+  },
+  "Web_Server1": {
+    "sensitive": false,
+    "type": "string",
+    "value": "34.207.115.133"
+  },
+  "Web_Server2": {
+    "sensitive": false,
+    "type": "string",
+    "value": "52.207.20.147"
+  },
+  "loadbalancer_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:elasticloadbalancing:us-east-1:884362627737:loadbalancer/app/webserver-lb/ce68eec3eec27bb6"
+  },
+  "loadbalancer_dns": {
+    "sensitive": false,
+    "type": "string",
+    "value": "webserver-lb-301471532.us-east-1.elb.amazonaws.com"
+  }
+}

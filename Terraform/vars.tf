@@ -17,9 +17,9 @@ variable PATH_TO_PRIVATE_KEY{
 variable AMIS {
   type= map(string)
   default = {
-    ap-south-1 = "ami-04d8d4462ae1ae813"
-    ap-northeast-1 = "ami-036cb77005c69fbe0"
-    us-east-1 = "ami-00514a528eadbc95b"
+    ap-south-1     = "ami-09052aa9bc337c78d"
+    ap-northeast-1 = "ami-021234069a5506633"
+    us-east-1      = "ami-00514a528eadbc95b"
   }
 }
 

@@ -6,14 +6,10 @@ boto_profile: default
 regions:
   - us-east-1
 
-#set aws_access_key and secret_key.
-aws_access_key: #Access_Key
-aws_secret_key: #Secret_key
-
 filters:
    instance-state-name: running
 # Enter the VPC-ID from terraform outputs or aws console
-   vpc-id: vpc-03c6aa09cf5084669
+   vpc-id: vpc-07d9ea7b17e711ac3
 
 hostnames:
     - ip-address

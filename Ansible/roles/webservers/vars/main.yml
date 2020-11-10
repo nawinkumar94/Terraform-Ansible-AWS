@@ -1,4 +1,6 @@
 ---
 # vars file for roles/webservers
 path_to_app: "/var/www/html"
-message: "{{ansible_hostname}}"
+hostname: "{{ansible_hostname}}"
+os_family: "{{ansible_os_family}}"
+distribution: "{{ansible_distribution}}"

@@ -13,13 +13,13 @@ describe aws_vpc(VPC_ID) do
   its ('state') { should eq 'available' }
   its('cidr_block') { should cmp '10.0.0.0/16' }
   its ('instance_tenancy') { should eq 'default' }
-  its('tags') { should include(:Name => 'primary') }
+  its('tags') { should include(:Name => 'main_vpc') }
 end
 
 # testcase for ec2 instances
 describe aws_ec2_instances do
   it { should be_running }
-  its('name') { should cmp 'Web_Server' }
+  its('name') { should cmp 'webserver' }
   its('instance_ids_count') { should cmp 2 }
   its('key_name') { should cmp 'mykeypair' }
   its('instance_type') { should eq 't2.micro' }
@@ -29,9 +29,7 @@ end
 # testcase for load balancer
 describe aws_alb(ALB_DNS) do
   it { should exist }
-  its('dns_name') { should cmp 'appalb' }
+  its('dns_name') { should cmp 'webserver-lb' }
   its('availability_zones.count') { should be > 1 }
-  its('state') {should be 'provisioned'}
   its('instance_ids.count') { should cmp 2 }
 end
-

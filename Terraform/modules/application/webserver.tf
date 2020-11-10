@@ -128,13 +128,13 @@ resource "aws_security_group" "allow_lb"{
   ingress{
     from_port   = 443
     to_port     = 443
-    protocol    ="tcp"
+    protocol    = "tcp"
     cidr_blocks = [var.CIDR_BLOCK_0]
-}
-egress{
-  from_port   = 0
-  to_port     = 0
-  protocol    = -1
-  cidr_blocks =[var.CIDR_BLOCK_0]
-}
+  }
+  egress{
+    from_port   = 0
+    to_port     = 0
+    protocol    = -1
+    cidr_blocks =[var.CIDR_BLOCK_0]
+  }
 }

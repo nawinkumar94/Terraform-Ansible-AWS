@@ -1,3 +1,7 @@
+data "aws_availability_zones" "present_azs" {
+  state = "available"
+}
+
 resource "aws_vpc" "main_vpc" {
   cidr_block           = var.CIDR_BLOCK_16
   instance_tenancy     = "default"
@@ -12,7 +16,7 @@ resource "aws_vpc" "main_vpc" {
 resource "aws_subnet" "main_subnet_public_id_1" {
   vpc_id                  = aws_vpc.main_vpc.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "${var.AWS_REGION}a"
+  availability_zone       = data.aws_availability_zones.present_azs.names[0]
   map_public_ip_on_launch = "true"
 
   tags = {
@@ -23,7 +27,7 @@ resource "aws_subnet" "main_subnet_public_id_1" {
 resource "aws_subnet" "main_subnet_public_id_2" {
   vpc_id                  = aws_vpc.main_vpc.id
   cidr_block              = "10.0.2.0/24"
-  availability_zone       = "${var.AWS_REGION}b"
+  availability_zone       = data.aws_availability_zones.present_azs.names[1]
   map_public_ip_on_launch = "true"
 
   tags = {
@@ -34,7 +38,7 @@ resource "aws_subnet" "main_subnet_public_id_2" {
 resource "aws_subnet" "main_subnet_public_id_3" {
   vpc_id                  = aws_vpc.main_vpc.id
   cidr_block              = "10.0.3.0/24"
-  availability_zone       = "${var.AWS_REGION}c"
+  availability_zone       = data.aws_availability_zones.present_azs.names[2]
   map_public_ip_on_launch = "true"
 
   tags = {
@@ -45,7 +49,7 @@ resource "aws_subnet" "main_subnet_public_id_3" {
 resource "aws_subnet" "main_subnet_private_id_1" {
   vpc_id                  = aws_vpc.main_vpc.id
   cidr_block              = "10.0.4.0/24"
-  availability_zone       = "${var.AWS_REGION}a"
+  availability_zone       = data.aws_availability_zones.present_azs.names[0]
   map_public_ip_on_launch = "false"
 
   tags = {
@@ -56,7 +60,7 @@ resource "aws_subnet" "main_subnet_private_id_1" {
 resource "aws_subnet" "main_subnet_private_id_2" {
   vpc_id                  = aws_vpc.main_vpc.id
   cidr_block              = "10.0.5.0/24"
-  availability_zone       = "${var.AWS_REGION}b"
+  availability_zone       = data.aws_availability_zones.present_azs.names[1]
   map_public_ip_on_launch = "false"
 
   tags = {
@@ -67,7 +71,7 @@ resource "aws_subnet" "main_subnet_private_id_2" {
 resource "aws_subnet" "main_subnet_private_id_3" {
   vpc_id                  = aws_vpc.main_vpc.id
   cidr_block              = "10.0.6.0/24"
-  availability_zone       = "${var.AWS_REGION}c"
+  availability_zone       = data.aws_availability_zones.present_azs.names[2]
   map_public_ip_on_launch = "false"
 
   tags = {
@@ -119,7 +123,6 @@ resource "aws_iam_role" "vpc_flow_log_role" {
   "Version": "2012-10-17",
   "Statement": [
       {
-        "Sid": "",
         "Effect": "Allow",
         "Principal": {
           "Service": "vpc-flow-logs.amazonaws.com"

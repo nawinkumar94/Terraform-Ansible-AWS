@@ -3,17 +3,24 @@
 - name: Install Extra Packages for Enterprise Linux
   yum: name=epel-release  state=present update_cache=yes
 
-- name: Install Python
+- name: Install Python packages
   yum: name={{ item }} state=present update_cache=yes
   with_items:
     - python
-    - httpd
-    - php
+    - python-pip
+
+- name: Install apache and php
+  yum:
+    name:
+      - httpd
+      - php
+    state: present
+    update_cache: yes
 
 - name: Start the apache and ensure it starts when we reboot
   service: name=httpd state=started enabled=yes
 
-- name: Upload the php file in the webserver
+- name: Configure the php file in the webserver
   template:
     src: ../files/index.php
     dest: "{{path_to_app}}"
@@ -21,18 +28,7 @@
   notify: restart apache
 
 - name: Creating a simple info page using Gathering facts
-  copy:
+  template:
+    src: ../files/info.html.j2
     dest: "{{path_to_app}}/info.php"
-    content: "<h1> Info about the web servers {{ansible_hostname}} </h1>"
   notify: restart apache
-
-- name: See the directory content
-  command: ls -la {{path_to_app}}
-  register: dir_content
-
-- name: Debug the directory contents
-  debug:
-    msg: "{{dir_content}}"
-
-- name: Check the status of the apache
-  command: service httpd status
