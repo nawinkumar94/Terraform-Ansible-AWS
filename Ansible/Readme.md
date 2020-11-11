@@ -12,7 +12,7 @@ Ansible is a radically simple IT automation engine that automates cloud provisio
 
 3.Executes the playbook for all the hosts
 
-## **About Project**
+## **About Platform**
 
 This version of playbooks and roles was last tested on:
 

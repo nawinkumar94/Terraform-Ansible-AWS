@@ -164,10 +164,10 @@ Need to reduce the time taken for automation
 
 ## **Tear Down Infrastructure**
 
-1.Tear down Terraform infrastructure
-  terraform destroy
+1.Tear down Terraform infrastructure 
+  "terraform destroy"
 
 2.Check whether all the resources are cleaned up in cloud
 
 3.Tear Down the Vagrant to stop and continue after
-  vagrant suspend
+  "vagrant suspend"
