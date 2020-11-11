@@ -1,11 +1,12 @@
-Terraform - Configurations
+## **Terraform - Configurations**
 
-About Terraform
+## **About Terraform**
+
 Terraform is a tool used to Build,Configure and Version up the Infrastructure efficiently.
 
 Terraform uses the configuration files to build and manage the Infrastructure
 
-Features of Terraform:
+## **Features of Terraform:**
 
 1.Infrastructure as Code
 
@@ -15,7 +16,8 @@ Features of Terraform:
 
 4.Changes by Automation
 
-About Project
+## **About Project**
+
 1.Creates a VPC and all its sub components
 
 2.Creates a Load Balancer and Target Group
@@ -26,17 +28,20 @@ About Project
 
 5.Cloudwatch Log Group created for storing the log streams
 
-System requirements
+## **System requirements**
+
 This version of packages and files was last tested on:
 
 Virtual Box - Ubuntu 20.04 and Ubuntu WSL
 
 Python 3.8
 
-Infrastructure
+## **Infrastructure**
+
 AWS Cloud
 
-Usage
+## **Usage**
+
 1.To Intialize the terraform directory
   terraform init
 
@@ -55,7 +60,8 @@ Usage
 6.To Destroy or bring down the infrastructure
   terraform destroy
 
-Project Insider
+## **Project Insider**
+
 Module: 1.application
 
 Module: 2.configuration

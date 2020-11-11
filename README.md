@@ -1,13 +1,15 @@
-# Terraform-Ansible-AWS
+## **Terraform-Ansible-AWS**
 Framing a architecture using terraform and Configuring the architecture using Ansible
 
 Vagrant-Terraform-Ansible-AWS-Project
 
-About Vagrant
+## **About Vagrant**
+
 Vagrant provides easy to configure, reproducible, and portable virtual machines
 And it uses various technologies like VirtualBox,VMware and AWS as providers.
 
-Vagrant Download and Setup
+## **Vagrant Download and Setup**
+
 1.Download the Vagrant package for windows
 
 https://www.vagrantup.com/downloads
@@ -28,7 +30,7 @@ https://www.vagrantup.com/downloads
 
 7.Customize the Virtual Box and VM resources
 
-About VirtualBox
+## **About VirtualBox**
 
 VirtualBox is a powerful virtualization product which has high performance and open source.
 VirtualBox Download and Setup
@@ -45,13 +47,16 @@ VirtualBox Download and Setup
 
 5.SSH in to virtual environment "ssh vagrant@hostname -p port -i  private_key_file"
 
-About Terraform
+## **About Terraform**
+
 Terraform is a tool used to Build,Configure and Version up the Infrastructure efficiently. Terraform uses the configuration files to build and manage the Infrastructure
 
-About Ansible
+## **About Ansible**
+
 Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration, and many other IT needs. Ansible is Agent less and uses YAML syntax Ansible requires to be installed only in controller machine
 
-Terraform and Ansible Installation in Dev Box[Ubuntu Image]
+## **Terraform and Ansible Installation in Dev Box[Ubuntu Image]**
+
 1.Execute the provision.sh script with chmod 700 permission.
   sudo ./provision.sh
 
@@ -61,7 +66,8 @@ Terraform and Ansible Installation in Dev Box[Ubuntu Image]
 3.Check and confirm Ansible Installation.
   ansible --version
 
-Infrastructure Build Automation with Terraform
+## **Infrastructure Build Automation with Terraform**
+
 1.Navigate to terraform directory.
   cd Terraform
 
@@ -79,7 +85,7 @@ Infrastructure Build Automation with Terraform
 
 6.Approve the execution and resources will be created
 
-Configuration Management Using Ansible
+## **Configuration Management Using Ansible**
 
 1.Execute the ansible-setup.sh script with chmod 700 permission
   sudo ./ansible-setup.sh
@@ -92,10 +98,12 @@ Configuration Management Using Ansible
 
 4.Ansible will fetch all the servers created by Terraform using dynamic inventory plugin and execute all the modules in the servers.
 
-About Chef Inspec
+## **About Chef Inspec**
+
 InSpec introduces the ability to test cloud resources for compliance in addition to the system and application-level resources
 
-Automated Testing Using Inspec
+## **Automated Testing Using Inspec**
+
 1.Automated Testing can be done using Inspec
 
 2.For Installation,Execute the inspec-setup.sh script with chmod 700 permission
@@ -128,7 +136,8 @@ Credentials in Config File
 
 7.Testcase will be executed and results will be displayed
 
-Test Infrastructure
+## **Test Infrastructure**
+
 1.Get the Loadbalancer DNS
 
 2.Launch It
@@ -139,7 +148,8 @@ Test Infrastructure
 
 5.When removing one web server,loadbalancer redirects all the traffic to the other
 
-Project Solution Summary
+## **Project Solution Summary**
+
 Like
 
 Two Tier Web application architecture is implemented
@@ -152,7 +162,8 @@ DisLike
 
 Need to reduce the time taken for automation
 
-Tear Down Infrastructure
+## **Tear Down Infrastructure**
+
 1.Tear down Terraform infrastructure
   terraform destroy
 
